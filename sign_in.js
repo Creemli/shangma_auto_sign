@@ -14,13 +14,14 @@ async function signIn() {
   headers.authorization = 'JwtUser '.concat(tokenEntry['SHM_JWT_TOKEN'])
   let data = JSON.stringify({
     //请求参数为：{}，经过AES算法加密之后就是: S1uAYaf/g6oBpv8DWUaQlQ==，在前端js代码中搜索encryptBody关键字
-    encryptBody: 'S1uAYaf/g6oBpv8DWUaQlQ=='
+    "encryptedData":"dc5miVob6D+gz67VLLWV+g==",
+    "encryptedKey":"GBjl2AIGe48yiuQL+pmVqAdD3qL6ltFbrabrU7biekYNLjqSCCh2ibvLMDkcWQFsaChA5bV85IQaxfch0EDQ76c/9Gr4HasHv5eBLVDoUavbyuOJk+PUpSBiLPeRuuwb3oy6KfZP0DfcAWW1j2mPaeZ0GtC2H6pZCv9JP7SVe7g="
   })
 
   let config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'https://www.shang-ma.com/api/v1/user/integral/sign-in',
+    url: 'https://apih5.shang-ma.com/app/web/user/checkin/1297116',
     headers: headers,
     data: data
   }
